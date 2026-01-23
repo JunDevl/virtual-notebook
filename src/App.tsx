@@ -17,16 +17,26 @@ const App = () => {
   const notebook = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setDateText((dt) => dt.set(Number(prevDate.current), notebook.current!.textContent));
-    //setText(dateText.get(Number(selectedDate)) ?? "");
+    const previous = prevDate.current;
+
+    setDateText((dt) => dt.set(Number(previous), text));
+
+    const currentText = dateText.get(Number(selectedDate)) ?? ""
+
+    setText(currentText);
+    notebook.current!.textContent = currentText;
+    
     prevDate.current = selectedDate;
   }, [selectedDate])
 
   return (
     <>
       <DateBar date={{selectedDate, setSelectedDate}}/>
-      <main id="notebook" contentEditable ref={notebook}>
-
+      <main 
+        id="notebook" 
+        contentEditable 
+        ref={notebook} 
+        onInput={e => setText((e.target as HTMLElement).textContent)}>
       </main>
       <Toolbar tool={{currentTool, setCurrentTool}}/>
       <button id="add-note">
