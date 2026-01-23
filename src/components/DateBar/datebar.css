@@ -1,0 +1,7 @@
+nav#date-bar {
+  position: absolute;
+  min-width: 5rem;
+  min-height: 5rem;
+  top: 0;
+  inset: auto 25%;
+}

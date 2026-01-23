@@ -5,24 +5,18 @@ main#notebook {
 
 nav {
   border-radius: 1rem;
-  opacity: 50%;
-}
+  background-color: rgba(153, 205, 50, 0.26);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
 
-nav#date-bar {
-  position: absolute;
-  background-color: aqua;
-  min-width: 5rem;
-  min-height: 5rem;
-  top: 0;
-  inset: auto 25%;
-}
-
-nav#tools {
-  position: absolute;
-  background-color: aquamarine;
-  min-width: 5rem;
-  min-height: 5rem;
-  inset: 15% auto;
+  &>* {
+    border: 1px black solid;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 button#add-note {

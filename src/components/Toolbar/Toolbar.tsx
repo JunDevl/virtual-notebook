@@ -1,3 +1,4 @@
+import "./toolbar.css"
 import type { Tools } from "../../types"
 
 interface Props {
