@@ -8,7 +8,10 @@ import Toolbar from './components/Toolbar/Toolbar';
 
 const App = () => {
   const [currentTool, setCurrentTool] = useState<Tools>("write");
-  const [selectedDate, setSelectedDate] = useState(new Date(new Date().setHours(0, 0, 0, 0)));
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const today = new Date();
+    return new Date(Date.UTC(today.getFullYear(),today.getMonth(),today.getDate(),0,0,0,0))
+  });
   const [text, setText] = useState<string>("");
   const [dateText, setDateText] = useState<Map<Number, string>>(new Map());
 
@@ -39,9 +42,6 @@ const App = () => {
         onInput={e => setText((e.target as HTMLElement).textContent)}>
       </main>
       <Toolbar tool={{currentTool, setCurrentTool}}/>
-      <button id="add-note">
-        &#9998;
-      </button>
     </>
   )
 }

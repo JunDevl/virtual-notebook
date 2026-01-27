@@ -1,4 +1,4 @@
-main#notebook {
+#notebook {
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -11,20 +11,12 @@ nav {
   justify-content: stretch;
 
   &>* {
+    box-sizing: border-box;
     border: 1px black solid;
     flex: 1;
+    word-break: break-all;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-}
-
-button#add-note {
-  font-size: 1.5rem;
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 100vw;
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
 }

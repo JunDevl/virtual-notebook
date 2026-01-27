@@ -1,7 +1,22 @@
-nav#date-bar {
+#date-bar {
   position: absolute;
   min-width: 5rem;
   min-height: 5rem;
+  justify-content: center;
   top: 0;
   inset: auto 25%;
+  box-sizing: border-box;
+}
+
+.date-card {
+  --margin-inline: 10px;
+  min-width: none;
+  flex: 0 0 calc((100% / 5) - (var(--margin-inline)*2));
+  margin-inline: var(--margin-inline);
+  box-sizing: border-box;
+  transition: all 200ms;
+}
+
+.date-card.selected {
+  background-color: goldenrod;
 }
